@@ -1,0 +1,484 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*Utilidades*/
+.producto, .excursionHome, .tour, .paquete {
+  background-color: whitesmoke;
+  box-shadow: 2px 1.5px 0.4rem #b1abab;
+  width: 100%;
+  color: #060425;
+  border-radius: 10px; }
+  .producto .precioBoton, .excursionHome .precioBoton, .tour .precioBoton, .paquete .precioBoton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    row-gap: 0;
+    column-gap: 2rem; }
+    .producto .precioBoton .precio, .excursionHome .precioBoton .precio, .tour .precioBoton .precio, .paquete .precioBoton .precio {
+      font-size: 1.12rem; }
+    .producto .precioBoton .boton, .excursionHome .precioBoton .boton, .tour .precioBoton .boton, .paquete .precioBoton .boton {
+      text-align: center;
+      padding: 0.4rem;
+      background-color: #b08dc0;
+      border-radius: 0.7rem;
+      box-shadow: 1px 1px 0.1rem;
+      font-size: 0.83rem; }
+    .producto .precioBoton .boton:hover, .excursionHome .precioBoton .boton:hover, .tour .precioBoton .boton:hover, .paquete .precioBoton .boton:hover {
+      background-color: #e6aad9; }
+
+body {
+  background-color: #060425;
+  font-family: 'Montserrat', sans-serif !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 13rem;
+  padding-top: 5rem; }
+
+/*Header*/
+header {
+  background-color: #dedede;
+  color: #060425;
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 0; }
+  header h1 {
+    text-shadow: 1px 1px 0.1rem;
+    width: 75%; }
+  header nav {
+    display: none; }
+  header .barraDesplegable {
+    transform: rotate(90deg);
+    text-align: center;
+    padding: 0.3rem;
+    background-color: #9fafb6;
+    border-radius: 0.7rem;
+    box-shadow: 1px 1px 0.3rem;
+    position: relative;
+    top: 0.8rem;
+    right: 0.3rem; }
+
+/*Home y detalles de excursiones*/
+.contenedor {
+  padding: 1.5rem 1.5rem 2rem;
+  row-gap: 2rem; }
+
+.contenedorHyT {
+  display: grid;
+  grid-template-rows: auto auto auto; }
+
+main .subtitulosMain {
+  margin-top: 1.5rem;
+  margin-left: 1.5rem;
+  color: whitesmoke;
+  border-bottom: solid; }
+
+main .mainCarousel {
+  padding: 1.5rem 6rem; }
+
+.excursionHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0rem;
+  column-gap: 0;
+  padding: 1rem; }
+  .excursionHome img {
+    height: 8rem;
+    width: 15rem; }
+  .excursionHome .tituloBoton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0;
+    column-gap: 1rem;
+    flex-wrap: wrap; }
+  .excursionHome .precioBotonExc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    row-gap: 2rem;
+    column-gap: 2rem; }
+
+.carta {
+  align-items: center; }
+
+.containerExcHome {
+  display: none; }
+
+.imgExc {
+  transform: scale(0.8, 0.84);
+  position: relative;
+  bottom: 0.4rem; }
+
+/*Tours*/
+.tour {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+  column-gap: 0;
+  padding: 0.5rem; }
+  .tour .imgMasTexto {
+    display: flex;
+    height: 6rem; }
+    .tour .imgMasTexto .imgTour {
+      height: 3rem;
+      display: grid;
+      grid-template-areas: "principal img2" "principal img3" "principal signoMas";
+      gap: 0.2rem; }
+      .tour .imgMasTexto .imgTour .mainImg {
+        width: 9rem;
+        height: 6rem;
+        grid-area: principal; }
+      .tour .imgMasTexto .imgTour .img2 {
+        width: 2rem;
+        height: 2rem;
+        grid-area: img2; }
+      .tour .imgMasTexto .imgTour .img3 {
+        width: 2rem;
+        height: 2rem;
+        grid-area: img3; }
+      .tour .imgMasTexto .imgTour .imgMas {
+        width: 2rem;
+        height: 2rem;
+        grid-area: signoMas; }
+      .tour .imgMasTexto .imgTour .otrasImg {
+        display: none; }
+    .tour .imgMasTexto h3 {
+      white-space: nowrap; }
+    .tour .imgMasTexto p {
+      overflow: scroll; }
+
+/*paquetes*/
+.contenedorPaquetes {
+  display: flex;
+  justify-content: center;
+  row-gap: 0.5rem;
+  flex-wrap: wrap; }
+  .contenedorPaquetes .contenedor {
+    display: grid;
+    grid-template-rows: 3rem 13rem 13rem;
+    gap: 3rem; }
+    .contenedorPaquetes .contenedor .subtitulosMain {
+      margin-top: 0; }
+
+.paquete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  padding: 1rem; }
+  .paquete img {
+    width: 40%;
+    height: 8rem; }
+  .paquete .textoPaquete {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem; }
+    .paquete .textoPaquete .nombrePaquete {
+      text-shadow: 1px 1px 0.1rem #93a080; }
+    .paquete .textoPaquete .parrafoPaquete {
+      height: 4.5rem;
+      overflow: scroll;
+      width: 80%; }
+
+/*Perfil*/
+.somosBody {
+  min-height: 100vh;
+  background: linear-gradient(#080314, #3a1f85); }
+  .somosBody .contenedorPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    column-gap: 1.5rem; }
+  .somosBody header {
+    background-color: transparent;
+    width: 100%;
+    left: 0; }
+    .somosBody header nav {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      display: block; }
+      .somosBody header nav ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        row-gap: 0; }
+        .somosBody header nav ul li a {
+          text-decoration: none;
+          color: #04040e; }
+        .somosBody header nav ul .menuUno {
+          background-color: #c2d7e5; }
+        .somosBody header nav ul .menuDos {
+          background-color: #a6c1dd; }
+        .somosBody header nav ul .menuTres {
+          background-color: #92b5c4; }
+        .somosBody header nav ul .menuCuatro {
+          background-color: #7398a8; }
+        .somosBody header nav ul .menuCinco {
+          background-color: #6a8899; }
+  .somosBody main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 1rem 0rem; }
+    .somosBody main .logoMasTexto {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 5rem;
+      column-gap: 0;
+      width: 80%;
+      padding: 3rem 0 0; }
+      .somosBody main .logoMasTexto .imgLogo {
+        border-radius: 4px;
+        width: 80%; }
+      .somosBody main .logoMasTexto p {
+        text-align: center;
+        color: whitesmoke;
+        width: 100%;
+        height: 9.5rem;
+        overflow: scroll; }
+    .somosBody main .imgValija {
+      width: 100%;
+      height: 100%; }
+  .somosBody .footerSomos {
+    background-color: transparent;
+    height: 3rem;
+    position: relative; }
+    .somosBody .footerSomos .iconosRedesSoc img {
+      height: 3rem;
+      border-radius: 10px; }
+
+/*Footer*/
+footer {
+  background-color: #dedede;
+  color: #060425;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 0;
+  column-gap: 0;
+  text-align: center;
+  height: 12rem;
+  padding: 0.5rem 0;
+  width: 100%;
+  position: absolute;
+  bottom: 0; }
+  footer img {
+    border-radius: 25px;
+    height: 4.5rem; }
+  footer img:hover {
+    box-shadow: 1px 1px 0.3rem black;
+    transform: scale(0.9); }
+  footer .iconosRedesSoc {
+    display: flex;
+    gap: 1rem; }
+
+/*mq para tablets*/
+@media (min-width: 576px) {
+  header h1 {
+    display: none; }
+  header nav {
+    display: block; }
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem; }
+    header nav li a {
+      text-decoration: none;
+      color: #060425; }
+  header .menuDesplegable {
+    display: none; }
+  .contenedor {
+    padding: 1.5rem 5rem 2rem;
+    row-gap: 3rem; }
+  /*tours*/
+  .tour {
+    padding: 1rem; }
+    .tour .imgMasTexto {
+      display: flex;
+      justify-content: center;
+      column-gap: 2rem; }
+      .tour .imgMasTexto p {
+        width: 40%; }
+  /*Paquetes*/
+  .contenedorPaquetes {
+    padding: 2rem 0 3rem; }
+    .contenedorPaquetes .contenedor {
+      min-width: 25rem;
+      width: 70%;
+      padding: 0 2rem; }
+  main .mainCarousel {
+    padding: 3rem 10rem; }
+  /*Excursiones*/
+  .excursionHome .tituloBoton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    row-gap: 0;
+    column-gap: 10rem; }
+  .excursionHome img {
+    height: 12rem; } }
+
+/*mq para pc*/
+@media (min-width: 1100px) {
+  body {
+    padding-bottom: 11rem; }
+  header {
+    padding: 0 4rem; }
+    header h1 {
+      display: block; }
+  .contenedor {
+    padding: 1.5rem 10rem 2rem; }
+  /*Carousel*/
+  main .mainCarousel {
+    padding: 3rem 20rem; }
+  /*Paquete*/
+  .contenedorPaquetes {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%; }
+    .contenedorPaquetes .contenedor {
+      width: auto;
+      display: grid;
+      grid-template-rows: 3rem 15rem 15rem; }
+  .paquete {
+    height: 15rem; }
+  .paqueteHome {
+    gap: 5rem;
+    height: auto; }
+    .paqueteHome img {
+      height: 12rem; }
+    .paqueteHome .textoPaquete {
+      align-items: flex-start;
+      row-gap: 2rem; }
+      .paqueteHome .textoPaquete h3 {
+        margin-left: 2rem; }
+      .paqueteHome .textoPaquete .precioBoton {
+        margin-left: 1rem; }
+      .paqueteHome .textoPaquete .parrafoPaquete {
+        width: 100%;
+        height: 6rem; }
+  /*Tours*/
+  .tour {
+    height: 20rem; }
+    .tour .imgMasTexto {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      row-gap: 0;
+      column-gap: 0;
+      height: auto;
+      position: relative;
+      bottom: 1.5rem; }
+      .tour .imgMasTexto p {
+        text-align: center;
+        height: auto;
+        width: 70%;
+        overflow: auto; }
+      .tour .imgMasTexto .imgTour {
+        display: flex;
+        column-gap: 2rem; }
+        .tour .imgMasTexto .imgTour .imgMas {
+          display: none; }
+        .tour .imgMasTexto .imgTour .otrasImg {
+          display: block; }
+        .tour .imgMasTexto .imgTour .mainImg {
+          width: 8rem;
+          height: 5rem; }
+        .tour .imgMasTexto .imgTour .img2 {
+          width: 8rem;
+          height: 5rem; }
+        .tour .imgMasTexto .imgTour .img3 {
+          width: 8rem;
+          height: 5rem; }
+        .tour .imgMasTexto .imgTour img {
+          width: 8rem;
+          height: 5rem; }
+    .tour h3 {
+      position: relative;
+      bottom: 1rem; }
+    .tour .precioBoton {
+      position: relative;
+      top: 1rem; }
+  /*excursiones*/
+  .containerExcHome {
+    display: block;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 22rem; }
+  .excursionHome {
+    display: none; }
+  /*perfil*/
+  .somosBody {
+    padding: 5rem 15em; }
+    .somosBody header nav {
+      background-color: #dedede; }
+      .somosBody header nav ul {
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        row-gap: 0;
+        column-gap: 2rem;
+        list-style: none;
+        height: 4.5rem; }
+        .somosBody header nav ul .menuUno {
+          background-color: transparent; }
+        .somosBody header nav ul .menuDos {
+          background-color: transparent; }
+        .somosBody header nav ul .menuTres {
+          background-color: transparent; }
+        .somosBody header nav ul .menuCuatro {
+          background-color: transparent; }
+        .somosBody header nav ul .menuCinco {
+          background-color: transparent; }
+        .somosBody header nav ul li a {
+          text-decoration: none;
+          color: #060425; }
+    .somosBody main {
+      gap: 5rem; }
+    .somosBody .logoMasTexto {
+      gap: 5rem; }
+    .somosBody .imgLogo {
+      height: 4rem;
+      width: 15rem; }
+    .somosBody .logoMasTexto p {
+      width: 25rem; }
+    .somosBody .footerSomos {
+      position: relative;
+      bottom: 3rem; }
+  /*footer*/
+  footer {
+    height: 10rem; } }
