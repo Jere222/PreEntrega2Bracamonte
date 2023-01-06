@@ -130,7 +130,6 @@ if (sn === "si") {
         let num_dias = validar(3, 15, "¿Cuantos dias quieres alojarte en cada pais(entre 3 y 15)?");
         let num_exc = validar(0, 7, "¿A cuantas excursiones le gustaría ir por pais a visitar(entre 0 y 7)?");
 
-        alert("costo: " + costo_aprox + "\n cant. paises: " + co + "\n num. dias: " + num_dias + "\n num. exc: " + num_exc);
         // Calculo de hotel + vuelos internos + excursiones por pais
         costo_aprox = costo_aprox + co * num_dias * 35000 + (co - 1) * 35000 + co * num_exc * 15000;
 
