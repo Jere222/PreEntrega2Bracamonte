@@ -126,7 +126,7 @@ if (sn === "si") {
             alert("El caracter ingresado no es una opcion");
             break;
     }
-    if (co > 2) {
+    if (co > 1) {
         let num_dias = validar(3, 15, "¿Cuantos dias quieres alojarte en cada pais(entre 3 y 15)?");
         let num_exc = validar(0, 7, "¿A cuantas excursiones le gustaría ir por pais a visitar(entre 0 y 7)?");
 
