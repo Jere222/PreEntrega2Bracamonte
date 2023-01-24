@@ -11,23 +11,28 @@ if (sn === "si") {
         } while ((var1 < num1) || (var1 > num2));
         return var1;
     }
-    function elegirPais(paises) {
-        while (op_pais != 0) {
-            if (co < 2) {
+    function noRepetirPais(pais, paisElegido, flag) {
+        if (pais == paisElegido){
+            alert("Este pais ya fue seleccionado");
+            return false;
+        } else {
+            return flag;
+        }
+    }
+    function elegirPais(paises, noRepetirPais) {
+        let flag;
+        while (op_pais != 0) { 
+            if (viaje.paises.length < 2) {
                 op_pais = validar(1, 5, "Que paises te gustaria conocer (min:2): \n" + "1) " + paises[0] + "\n" + "2) " + paises[1] + "\n" + "3) " + paises[2] + "\n" + "4) " + paises[3] + "\n" + "5) " + paises[4]);
             } else {
                 op_pais = validar(0, 5, "Que paises te gustaria conocer (min:2): \n" + "1) " + paises[0] + "\n" + "2) " + paises[1] + "\n" + "3) " + paises[2] + "\n" + "4) " + paises[3] + "\n" + "5) " + paises[4] + "\n 0) Ya elegi todos los paises a los que quiero ir");
             }
-            let flag = true;
+            flag = true;
             for(let pais of viaje.paises){
-                if (pais == paises[op_pais-1]){
-                    flag = false;
-                    alert("Este pais ya fue seleccionado");
-                }
+                flag = noRepetirPais(pais, paises[op_pais-1], flag);
             }
-            if ((op_pais != 0)&&(flag)) {
+            if ((op_pais != 0)&&(flag == true)) {
                 viaje.paises.push(paises[op_pais - 1]);
-                co++;
             }
             
         }
@@ -90,15 +95,15 @@ if (sn === "si") {
         comentarios: ""
     };
 
-    let op = prompt("Elige el región a la que te gustaria ir: \n \n 1) Africa \n 2) America del Sur \n 3) America del Norte \n 4) Centroamerica \n 5) Asia Oriental \n 6) Asia del Sur \n 7) Asia Sudoriental Continental \n 8) Europa \n 9) Oceania");
+    let op = validar(1, 9, "Elige el región a la que te gustaria ir: \n \n 1) Africa \n 2) America del Sur \n 3) America del Norte \n 4) Centroamerica \n 5) Asia Oriental \n 6) Asia del Sur \n 7) Asia Sudoriental Continental \n 8) Europa \n 9) Oceania");
     viaje.area = areas[op - 1].nombre;
-    let op_pais, co = 0;
-    elegirPais(areas[op - 1].paises);
+    let op_pais;
+    elegirPais(areas[op - 1].paises, noRepetirPais);
     viaje.cantPers = validar(1, 10, "Cuantas personas quieren realizar este viaje (entre 1 y 10)?");
     viaje.diasPais = validar(3, 15, "¿Cuantos dias quieres alojarte en cada pais(entre 3 y 15)?");
     viaje.excPais = validar(0, 7, "¿A cuantas excursiones le gustaría ir por pais a visitar(entre 0 y 7)?");
     viaje.comentarios = prompt("Quieres agregar algun comentario?");
     viaje.email = prompt("Dejanos tu email para contactarte");
-    viaje.costoAprox = ((areas[op-1].costoInicial + co * viaje.diasPais * 35000 + (co - 1) * 35000 + co * viaje.excPais * 15000) * viaje.cantPers) * 1.05;
-    console.log(viaje);
+    viaje.costoAprox = ((areas[op-1].costoInicial + viaje.paises.length * viaje.diasPais * 35000 + (viaje.paises.length - 1) * 35000 + viaje.paises.length * viaje.excPais * 15000) * viaje.cantPers) * 1.05;
+    alert("Ya estamos preparando tu tour \n \n Los datos del mismo son: \n\n Area: " + viaje.area + " \n Paises: " + viaje.paises.join(", ") + ".\n  Cantidad de personas: " + viaje.cantPers + "\n Dias para alojarse en cada pais: " + viaje.diasPais + "\n Excursiones por pais: " + viaje.excPais + " \n Email: " + viaje.email + "\n Comentarios: " + viaje.comentarios + "\n Costo Aproximado: $" + viaje.costoAprox + "\n\n  Este incluye hotel tres estrellas, traslado y las excursiones solicitadas por viaje");
 }
